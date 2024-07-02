@@ -16,7 +16,7 @@ for sss = 301:302
  	addpath(genpath('/opt/MATLAB Add-Ons'))
     
 		% DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
-    DATA_CAST = 'gpuArray-single';     % set to 'single' or 'gpuArray-single' to speed up computations
+    DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
     delete(gcp)
     parpool
     %%
