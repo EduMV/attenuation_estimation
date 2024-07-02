@@ -1,7 +1,7 @@
 clear; close all; clc; rng shuffle;
 
-gpuInfo = gpuDevice;
-disp(gpuInfo);
+%gpuInfo = gpuDevice;
+%disp(gpuInfo);
 rng("default")
 
 %% Iter
@@ -16,7 +16,7 @@ for sss = 301:500
  	addpath(genpath('/opt/MATLAB Add-Ons'))
     
 		% DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
-    DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
+    DATA_CAST = 'gpuArray-single';     % set to 'single' or 'gpuArray-single' to speed up computations
     delete(gcp)
     parpool
     %%
@@ -194,7 +194,7 @@ for sss = 301:500
     
         % run the simulation
         %colormap gray
-        sensor_data = kspaceFirstOrder2D(kgrid, medium, source, sensor, input_args{:});
+        sensor_data = kspaceFirstOrder2DG(kgrid, medium, source, sensor, input_args{:});
     
         sensor_data=sensor_data';
         %%
