@@ -5,4 +5,4 @@
 #SBATCH --nodelist=worker10
 #SBATCH --output="log.out"
 
-srun matlab -nosplash -nodesktop -nodisplay -r “kwave_dataset_AC; exit”
+srun matlab -nosplash -nodesktop -nodisplay -r "kwave_dataset_AC; exit"
