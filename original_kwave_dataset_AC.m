@@ -14,7 +14,6 @@ for sss = 301:302
     clearvars -except sss; clc; rng shuffle;
     addpath(genpath(pwd))
  	addpath(genpath('/opt/MATLAB Add-Ons'))
-    addpath(genpath([pwd,'/beamforming_func']))
     
 		% DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
     DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
