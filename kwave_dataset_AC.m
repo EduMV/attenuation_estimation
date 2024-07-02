@@ -5,7 +5,7 @@ clear; close all; clc; rng shuffle;
 rng("default")
 
 %% Iter
-for sss = 301:500
+for sss = 301:302
 % This example demonstrates the use of k-Wave for the reconstruction of a
 % two-dimensional photoacoustic wave-field recorded  over a linear array of
 % sensor elements  The sensor data is simulated using kspaceFirstOrder2D
@@ -229,7 +229,7 @@ for sss = 301:500
     ylabel('Depth (mm)')
     axis image
 
-    save("rf_qus_AC_INCrand_"+num2str(sss)+".mat", "rf", "x", "z", "fs", "medium", "circleMatrix", ...
+    save("/mnt/nfs/rmarin/attenuation_estimation/out/rf_qus_AC_INCrand_"+num2str(sss)+".mat", "rf", "x", "z", "fs", "medium", "circleMatrix", ...
         "sos_mean", "sos_std", "rho_mean", "rho_std", "alpha_mean", "alpha_std","tone_burst_freq", ...
         "focal_distance", "radius_meters", "center_meters")
 %     save("rf_qus_AC_INCrand_ref.mat", "rf", "x", "z", "fs", "medium", "circleMatrix", ...
