@@ -16,7 +16,7 @@ for sss = 301:302
  	addpath(genpath('/opt/MATLAB Add-Ons'))
     
 		% DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
-    DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
+    DATA_CAST = 'gpuArray-single';     % set to 'single' or 'gpuArray-single' to speed up computations
     delete(gcp)
     parpool
     %%
@@ -123,7 +123,7 @@ for sss = 301:302
     
     medium.alpha_coeff = patterns(alpha_coeff_mean, alpha_coeff_std, 'homo', [], Nx, Ny);
     
-    medium.alpha_power = 1;
+    medium.alpha_power = 1.001;
     medium.alpha_mode = 'no_dispersion';
     
     source_strength = 1e6;
@@ -194,7 +194,7 @@ for sss = 301:302
     
         % run the simulation
         %colormap gray
-        sensor_data = kspaceFirstOrder2D(kgrid, medium, source, sensor, input_args{:});
+        sensor_data = kspaceFirstOrder2DG(kgrid, medium, source, sensor, input_args{:});
     
         sensor_data=sensor_data';
         %%
