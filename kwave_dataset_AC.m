@@ -194,7 +194,7 @@ for sss = 301:500
     
         % run the simulation
         %colormap gray
-        sensor_data = kspaceFirstOrder2DG(kgrid, medium, source, sensor, input_args{:});
+        sensor_data = kspaceFirstOrder2D(kgrid, medium, source, sensor, input_args{:});
     
         sensor_data=sensor_data';
         %%
