@@ -5,7 +5,7 @@ clear; close all; clc; rng shuffle;
 rng("default")
 
 %% Iter
-for sss = 301:302
+for sss = 1:300
 % This example demonstrates the use of k-Wave for the reconstruction of a
 % two-dimensional photoacoustic wave-field recorded  over a linear array of
 % sensor elements  The sensor data is simulated using kspaceFirstOrder2D
@@ -17,7 +17,7 @@ for sss = 301:302
     addpath(genpath([pwd,'/beamforming_func']))
     
 		% DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
-    DATA_CAST = 'single';     % set to 'single' or 'gpuArray-single' to speed up computations
+    DATA_CAST = 'gpuArray-single';     % set to 'single' or 'gpuArray-single' to speed up computations
     delete(gcp)
     parpool
     %%
@@ -124,7 +124,7 @@ for sss = 301:302
     
     medium.alpha_coeff = patterns(alpha_coeff_mean, alpha_coeff_std, 'homo', [], Nx, Ny);
     
-    medium.alpha_power = 1.001;
+    medium.alpha_power = 1;
     medium.alpha_mode = 'no_dispersion';
     
     source_strength = 1e6;
@@ -195,7 +195,7 @@ for sss = 301:302
     
         % run the simulation
         %colormap gray
-        sensor_data = kspaceFirstOrder2DC(kgrid, medium, source, sensor, input_args{:});
+        sensor_data = kspaceFirstOrder2D(kgrid, medium, source, sensor, input_args{:});
     
         sensor_data=sensor_data';
         %%
