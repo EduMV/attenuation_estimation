@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --nodelist=worker9
+#SBATCH --nodelist=worker8
 #SBATCH --output="slurm-%j.out"
 #SBATCH --time=10000000
 #SBATCH --partition=thinkstation-p360
